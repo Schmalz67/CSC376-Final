@@ -1,0 +1,96 @@
+//
+//  main.cpp
+//  376_FinalProject
+//
+//  Created by Drew Schmalz on 4/29/21.
+//
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <iostream>
+int main(int argc, const char * argv[]) {
+
+    
+    std::string pep8Instructions [18] = {"Stop Execution", "Bitwise invert r","Arithmetic shift left r","Arithmetic shift right r","Rotate left r","Rotate right r","Decimal input trap","Decimal output trap","Character input","Character output","Add to r","Substract from r","Bitwise AND to r","Bitwise OR to r","Load r from memory","Load byte from memory","Store r to memory","Store byte r to memory"};
+    
+    for(int i = 0; i < 18; i++) {
+      std::cout << pep8Instructions[i] << "\n";
+    }
+    
+    std::string instructionSpecifier [18] = {"0000 0000", "0001 100r", "0001 110r", "0001 111r", "0001 000r", "0010 001r", "0011 0aaa", "0011 1aaa", "0100 1aaa", "0101 0aaa", "0111 raaa", "1000 raaa", "1001 raaa", "1010 raaa", "1100 raaa", "1101 raaa", "1110 raaa", "1111 raaa"};
+    
+    for(int i = 0; i < 18; i++) {
+      std::cout << instructionSpecifier[i] << "\n";
+    }
+    int code;
+    std::cout << "Enter the code you wish to execute in the PEP8 machine: ";
+    std::cin >> code;
+    
+    std::cout << pep8Instructions[code];
+    std::cout << instructionSpecifier[code];
+    
+    
+    int x, n;
+        std::cout << "Enter the number of items:" << "\n";
+        std::cin >>n;
+        int *arr = new int(n);
+        std::cout << "Enter " << n << " items";
+        for (x = 0; x < n; x++) {
+            std::cin >> arr[x];
+        }
+        std::cout << "You entered: ";
+        for (x = 0; x < n; x++) {
+            std::cout << arr[x] << " ";
+        }
+    
+    int a[10], k, i;
+    std::cout<<"Enter the number to convert: ";
+    std::cin>>k;
+    for(i=0; k>0; i++)
+    {
+    a[i]=k%2;
+    k = k/2;
+    }
+    std::cout<<"Binary of the given number= ";
+    for(i=i-1 ;i>=0 ;i--)
+    {
+    std::cout<<a[i];
+    }
+    int newNum, p, t;
+    if(code == 1){
+        return 0;
+    }
+    else if(code==2){
+        if(k == 0){
+            k = k+1;
+        }
+        else {
+            k = k-1;
+        }
+    }
+    else if(code == 3){
+        k = k<<k;
+        }
+    else if(code == 4){
+        k = k>>k;
+    }
+    else if(code == 9){
+        std::cin>>newNum;
+    }
+    else if(code == 10){
+        std::cout<<k;
+    }
+    else if(code == 11){
+        std::cin>>p;
+        k = k+p;
+        std::cout<<k;
+    }
+    else if(code == 12){
+        std::cin>>t;
+        k = k-t;
+        std::cout<<k;
+    }
+};
+    
+    
+
